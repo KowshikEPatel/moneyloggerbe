@@ -12,6 +12,7 @@ router.post("/", async (req,res)=>{
         
         res.status(200).json({"login":"success","user":{"name":user.username,"email":user.email,"transactions":transactions}});
       } catch (err) {
+        console.log(err);
         res.status(500).json(err);
       }
     
