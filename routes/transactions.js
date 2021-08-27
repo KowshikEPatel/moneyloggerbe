@@ -26,6 +26,7 @@ router.post("/delete",async (req,res)=>{
             res.status(200).json({"status":"success","message":transaction})
 
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 })
