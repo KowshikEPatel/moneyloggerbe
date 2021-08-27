@@ -15,7 +15,6 @@ router.post("/add",async (req,res)=>{
             const trans = await newTrans.save()
             res.status(200).json(trans)
       } catch (err) {
-          console.log(err)
         res.status(500).json(err);
       }
 })
