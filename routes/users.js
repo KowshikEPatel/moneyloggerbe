@@ -10,7 +10,7 @@ router.post("/", async (req,res)=>{
         const hashpass  = await bcrypt.compare(req.body.password,user.password);
         const transactions = await Transaction.find({user:user._id})
         if(hashpass===true){
-          res.status(200).json({"login":"success","user":{"name":user.username,"email":user.email,"transactions":transactions}});
+          res.status(200).json({"login":"success","user":{"userid":user._id,"username":user.username,"useremail":user.email,"transactions":transactions}});
         }
         else{
           res.status(200).json({"login":"failed","message":"wrong password"})
